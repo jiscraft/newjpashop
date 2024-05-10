@@ -17,13 +17,6 @@ public class MemberTestController {
     @Autowired
     MemberService memberService ;
 
-    @GetMapping("/")
-    public String welcome(){
-        return  "welcome";
-    }
-
-
-
     @PostMapping("/testmember")
     public ResponseEntity save(@RequestBody MemberCreateRequestDto requestMember){
         Address address = new Address(requestMember.getCity(), requestMember.getStreet() , requestMember.getZipcode());
